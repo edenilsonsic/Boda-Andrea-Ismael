@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <title>Andrea & Ismael - Nos Casamos</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:wght@400;600&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
   <style>
@@ -84,14 +84,21 @@ body {
   height: 0;
 }
 
-/* El iframe ocupa todo el contenedor */
-.map-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100% !important;
-  height: 100% !important;
-  border-radius: 14px;      /* opcional, el mismo border-radius que tenías */
+  /* El iframe ocupa todo el contenedor */
+  .map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 14px;      /* opcional, el mismo border-radius que tenías */
+  }
+
+  .modal-content {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 56.25%;   /* 56.25% = 9/16 → para proporción 16:9 (muy común en mapas) */
+  height: 0;
 }
     .heart-float {
       position: absolute;
@@ -100,6 +107,7 @@ body {
       opacity: 0;
       animation: floatHeart 2.5s ease-in-out forwards 1s;
     }
+
     @keyframes floatHeart {
       0% { opacity: 0; transform: translateY(30px); }
       80% { opacity: 0.7; }
@@ -218,13 +226,13 @@ body {
     width: 260px;
     height: 260px;
   }
-.image-nombres-padres {
+  .image-nombres-padres {
     width: 400px;
     height: 400px;
   }
 
    }
-.image-fecha {
+  .image-fecha {
     width: 400px;
     height: 200px;
   }
@@ -252,34 +260,34 @@ body {
     }
 
   /* === IMAGEN PRINCIPAL - ANCHO COMPLETO, ALTURA CONTROLADA, REDONDEADA === */
-.full-width-hero {
+  .full-width-hero {
   margin: 0 0 40px 0;
   padding: 0;
   max-width: 100%;
   overflow: hidden;
   border-radius: 20px; /* Redondea los 4 lados */
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-}
+  }
 
-.hero-container {
+  .hero-container {
   width: 100%;
   height: 380px; /* Altura fija en escritorio */
   overflow: hidden;
   border-radius: 20px;
-}
+  }
 
-.hero-image {
+  .hero-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
   transition: transform 0.5s ease;
-}
+  }
 
-/* Hover sutil (opcional) */
-.full-width-hero:hover .hero-image {
+  /* Hover sutil (opcional) */
+  .full-width-hero:hover .hero-image {
   transform: scale(1.03);
-}
+  } 
 
 /* RESPONSIVE */
 @media (min-width: 768px) {
@@ -665,7 +673,7 @@ body {
       <span class="close" onclick="closeModal('mapModal')">×</span>
       <h3 style="text-align:center; margin-bottom:18px; color:var(--azul-navy); font-family: 'Great Vibes', cursive; font-size: 1.8rem;">Ubicación</h3>
       <div class="map-container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247895.74918222643!2d-89.92746137982944!3d13.87674624649903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f62c0505b64b3e1%3A0xbbf9203a6a00db5c!2sCachito%20Mountain%2C%20Los%20Naranjos!5e0!3m2!1ses!2ssv!4v1771532084920!5m2!1ses!2ssv" width="335" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247895.74918222643!2d-89.92746137982944!3d13.87674624649903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f62c0505b64b3e1%3A0xbbf9203a6a00db5c!2sCachito%20Mountain%2C%20Los%20Naranjos!5e0!3m2!1ses!2ssv!4v1771532084920!5m2!1ses!2ssv"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </div>
