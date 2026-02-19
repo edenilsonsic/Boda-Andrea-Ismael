@@ -77,6 +77,22 @@ body {
       100% { opacity: 1; transform: scale(1); }
     }
 
+    .map-container {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 56.25%;   /* 56.25% = 9/16 → para proporción 16:9 (muy común en mapas) */
+  height: 0;
+}
+
+/* El iframe ocupa todo el contenedor */
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 14px;      /* opcional, el mismo border-radius que tenías */
+}
     .heart-float {
       position: absolute;
       font-size: 2.5rem;
@@ -122,7 +138,7 @@ body {
   display: block;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0);
 }
 
 .image-date-overlay img {
@@ -140,10 +156,29 @@ body {
   display: block;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0);
 }
 
 .image-nombres-padres img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;     /* o contain, según prefieras */
+  display: block;
+}
+
+
+.image-fecha {
+  position: relative;
+  width: 600px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0);
+}
+
+.image-fecha img {
   width: 100%;
   height: 100%;
   object-fit: contain;     /* o contain, según prefieras */
@@ -188,13 +223,20 @@ body {
     height: 400px;
   }
 
+   }
+.image-fecha {
+    width: 400px;
+    height: 200px;
+  }
+
+
   .overlay-text .title {
     font-size: 2.3rem;
   }
   .overlay-text .date {
     font-size: 1rem;
   }
-}
+
 
     /* === CONTENIDO === */
     main { display: none; padding: 40px 20px; max-width: 700px; margin: 0 auto; }
@@ -447,11 +489,19 @@ body {
    <!-- Imagen Principal - ANCHO COMPLETO + REDONDEADA -->
 <section class="section full-width-hero">
   <div class="hero-container">
-    <img src="img/princi.jpg" alt="Andrea & Ismael" class="hero-image">
+    <img src="img/toma-principal.png" alt="Andrea & Ismael" class="hero-image">
     
   </div>
 </section>
-<h1 style="font-family: 'Great Vibes', cursive; font-size: 3.5rem; color: var(--azul-medio); text-align: center;">Andrea & Ismael</h1>
+
+  <h1 style="font-family: 'Great Vibes', cursive; font-size: 4.0rem; color: var(--azul-medio); margin: 0; line-height: 0.75; ">Andrea </h1>
+
+  <h1 style="font-family: 'Great Vibes', cursive; font-size: 4.0rem; color: var(--azul-medio); text-align: center; margin: -0.6rem 0.3rem 0; line-height: 0.7; transform: translateY(-0.1em);"> & </h1>
+
+  <h1 style="font-family: 'Great Vibes', cursive; font-size: 4.0rem; color: var(--azul-medio); text-align:right; margin: -0.8rem 0 0; line-height: 0.75; "> Ismael</h1>
+
+
+
     <!-- Corazón + Fecha -->
 <!-- Imagen con texto superpuesto - CENTRADA -->
     <section class="section" style="text-align: center; padding: 4px 0;">
@@ -468,11 +518,14 @@ body {
       <div class="image-nombres-padres">
         <img src="img/Nombres-padres.png" alt="Nos Casamos">
       </div>
-      <div> <br> Tenemos el honor de invitarte a <br> celebrar nuestra unión en matrimonio</div>
-    </section>
+      <!--<div> <br> Tenemos el honor de invitarte a <br> celebrar nuestra unión en matrimonio</div> -->
+    </section> 
+
+    <h1 style="font-family: 'Baskerville Old Face', cursive; font-size: 1.3rem; color: var(--azul-navy); text-align: center;">
+      Tenemos el gran honor de invitarte a uno de los días más especiales de nuetras vidas. <br> La celebración de nuestro matrimonio <br> Un encuentro de amor, fé y alegría que permanecera por siempre en nuestro corazón</h1>
 
     <section class="section" style="text-align: center; padding: 6px 0;">
-      <div class="image-nombres-padres">
+      <div class="image-fecha">
         <img src="img/fecha.png" alt="Nos Casamos">
       </div>
     </section>
@@ -562,18 +615,10 @@ body {
     <!-- Carrusel de Fotos -->
     <section class="section">
       <div class="carousel">
-        <img src="img/carrusel10.jpg">
-        <img src="img/carrusel2.jpg">
-        <img src="img/carrusel3.jpg">
-        <img src="img/carrusel4.jpg">
-        <img src="img/img/carrusel5.jpg">
-        <img src="img/carrusel6.jpg">
-        <img src="img/carrusel7.jpg">
-        <img src="img/carrusel8.jpg">
-        <img src="img/carrusel9.jpg">
-        <img src="img/carrusel10.jpg">
+        <img src="img/manos2.png">
+        <img src="img/manos3.png">
+        <img src="img/toma1.png">
         <img src="img/carrusel11.jpg">
-        <img src="img/carrusel1.jpg">
         <button class="carousel-btn prev" onclick="prevSlide()"> < </button>
         <button class="carousel-btn next" onclick="nextSlide()"> > </button>
       </div>
@@ -619,7 +664,9 @@ body {
     <div class="modal-content">
       <span class="close" onclick="closeModal('mapModal')">×</span>
       <h3 style="text-align:center; margin-bottom:18px; color:var(--azul-navy); font-family: 'Great Vibes', cursive; font-size: 1.8rem;">Ubicación</h3>
-      <iframe id="mapFrame" width="100%" height="380" frameborder="0" style="border:0; border-radius:14px;" allowfullscreen="" loading="lazy"></iframe>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247895.74918222643!2d-89.92746137982944!3d13.87674624649903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f62c0505b64b3e1%3A0xbbf9203a6a00db5c!2sCachito%20Mountain%2C%20Los%20Naranjos!5e0!3m2!1ses!2ssv!4v1771532084920!5m2!1ses!2ssv" width="335" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
     </div>
   </div>
 
@@ -682,11 +729,21 @@ body {
       });
     }, { threshold: 0.3 });
 
-    function openMap(query) {
-      const url = `https://www.google.com/maps/embed/v1/place?q=${encodeURIComponent(query)}`;
-      document.getElementById('mapFrame').src = url;
-      document.getElementById('mapModal').style.display = 'flex';
-    }
+    function openMap() {
+  document.getElementById('mapModal').style.display = 'flex';
+}
+
+function closeMap() {
+  document.getElementById('mapModal').style.display = 'none';
+}
+
+// Opcional: cerrar con clic fuera del contenido
+window.onclick = function(event) {
+  const modal = document.getElementById('mapModal');
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
 
     function openRSVP() {
       document.getElementById('rsvpModal').style.display = 'flex';
