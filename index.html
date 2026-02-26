@@ -135,7 +135,7 @@ body {
    .image-date-overlay {
   position: relative;
   width: 300px;
-  height: 300px;
+  height: 300px;    
   margin: 0 auto;
   display: block;
   border-radius: 16px;
@@ -153,7 +153,7 @@ body {
    .image-nombres-padres {
   position: relative;
   width: 600px;
-  height: auto;
+  height: 600px;
   margin: 0 auto;
   display: block;
   border-radius: 16px;
@@ -164,7 +164,7 @@ body {
 .image-nombres-padres img {
   width: 100%;
   height: 100%;
-  object-fit: contain;     /* o contain, según prefieras */
+  object-fit: cover;     /* o contain, según prefieras */
   display: block;
 }
 
@@ -221,13 +221,13 @@ body {
     height: 260px;
   }
   .image-nombres-padres {
-    width: 400px;
-    height: 400px;
+    width: 260px;
+    height: 260px;
   }
 
    }
   .image-fecha {
-    width: 400px;
+    width: 300px;
     height: 200px;
   }
 
@@ -532,6 +532,14 @@ body {
       </div>
     </section>
 
+    <!-- Cuenta Regresiva -->
+    <section class="section" style="text-align: center;">
+        <div style="font-family: 'Baskerville Old Face', cursive; font-size: 2.8rem; color: var(--azul-navy); margin-bottom: 10px;">
+            FALTAN
+        </div>
+        <div id="countdown" style="font-size: 1.9rem; letter-spacing: 2px;">Cargando...</div>
+    </section>
+
     <!-- Cuadro Beige 1 -->
     <section class="section">
       <div class="beige-box">
@@ -639,10 +647,7 @@ body {
       <img src="https://images.unsplash.com/photo-1515934751635-c81c6f98491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" style="max-width:100%; border-radius:16px; box-shadow: 0 15px 40px rgba(0,0,0,0.15);">
     </section>
 
-    <!-- Cuenta Regresiva -->
-    <section class="section">
-      <div id="countdown">Cargando...</div>
-    </section>
+    
 
     <!-- Flores Finales -->
     <section class="footer-flowers">
@@ -782,8 +787,9 @@ window.onclick = function(event) {
         const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
         const minutes = Math.floor((diff % (1000*60*60)) / (1000*60));
         const seconds = Math.floor((diff % (1000*60)) / 1000);
-        document.getElementById('countdown').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-      }, 1000);
+        document.getElementById('countdown').innerHTML = 
+      `${days}d ${hours.toString().padStart(2,'0')}h ${minutes.toString().padStart(2,'0')}m ${seconds.toString().padStart(2,'0')}s`;
+  }, 1000);
     }
 
     window.onclick = function(e) {
