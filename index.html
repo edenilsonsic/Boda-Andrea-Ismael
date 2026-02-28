@@ -33,6 +33,38 @@ body {
   background-color: rgba(230, 240, 250, 0.85); 
 }
 
+/* Sección contenedora - centrada y con padding generoso */
+.padres-section {
+  text-align: center;
+  /*padding: 20px 15px 40px;*/
+  background: rgba(255, 255, 255, 0);   /* opcional: sutil fondo para que resalte */
+  border-radius: 16px;
+  margin: 0 10px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Contenedor principal de la imagen */
+.padres-container {
+  position: relative;
+  width: 100%;
+  max-width: 720px;           /* ← ajusta este valor según el ancho ideal de tu imagen */
+  margin: 0 auto 20px;
+  border-radius: 16px;
+  overflow: hidden;           /* mantiene bordes redondeados limpios */
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0);
+            /* fondo blanco por si la imagen tiene transparencia */
+}
+
+/* La imagen en sí */
+.padres-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;        /* lo MÁS importante: muestra TODO sin recortar */
+}
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Lora', serif;
@@ -291,6 +323,22 @@ body {
   .full-width-hero {
     border-radius: 28px;
   }
+
+  .padres-container {
+    max-width: 100%;          /* ocupa casi todo el ancho en móvil */
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0);
+  }
+  
+  .padres-section {
+    padding: 15px 10px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .padres-container {
+    max-width: 96vw;          /* evita que toque los bordes en pantallas muy pequeñas */
+  }
 }
 
 @media (max-width: 480px) {
@@ -516,12 +564,18 @@ body {
       </div>
     </section>
 
-<section class="section" style="text-align: center; padding: 6px 0;">
-      <div class="image-nombres-padres">
+<!--<section class="section full-width-hero">
+      <div class="hero-container">
         <img src="img/Nombres-padres.png" alt="Nos Casamos">
-      </div>
+      </div>-->
       <!--<div> <br> Tenemos el honor de invitarte a <br> celebrar nuestra unión en matrimonio</div> -->
-    </section> 
+    <!--</section> -->
+    
+    <section class="section padres-section">
+      <div class="padres-container">
+        <img src="img/Nombres-padres.png" alt="Nombres de los padres" class="padres-img">
+      </div>
+    </section>
 
     <h1 style="font-family: 'Baskerville Old Face', cursive; font-size: 1.3rem; color: var(--azul-navy); text-align: center;">
       Tenemos el gran honor de invitarte a uno de los días más especiales de nuetras vidas. <br> La celebración de nuestro matrimonio <br> Un encuentro de amor, fé y alegría que permanecera por siempre en nuestro corazón</h1>
