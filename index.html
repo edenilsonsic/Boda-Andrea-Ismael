@@ -779,16 +779,17 @@ body {
     <div class="modal-content">
       <span class="close" onclick="closeModal('rsvpModal')">×</span>
       <h3 style="text-align:center; margin-bottom:25px; color:var(--azul-navy); font-family: 'Great Vibes', cursive; font-size: 1.9rem;">Confirma tu Asistencia</h3>
-      <form style="display:flex; flex-direction:column; gap:14px;">
-        <input type="text" placeholder="Nombre completo" required style="padding:12px; border:1px solid #ddd; border-radius:10px; font-family:inherit;">
-        <input type="email" placeholder="Email" required style="padding:12px; border:1px solid #ddd; border-radius:10px; font-family:inherit;">
-        <select required style="padding:12px; border:1px solid #ddd; border-radius:10px; font-family:inherit;">
+
+      <form id="rsvpForm" style="display:flex; flex-direction:column; gap:14px;">
+        <input type="text" id="nombre"  placeholder="Nombre completo" required style="padding:12px; border:1px solid #ddd; border-radius:10px; font-family:inherit;">
+        <input type="Telefono" id="email" placeholder="phone" required style="padding:12px; border:1px solid #ddd; border-radius:10px; font-family:inherit;">
+        <select id="personas" required style="padding:12px; border:1px solid #ddd; border-radius:10px; font-family:inherit;">
           <option value="">Asistiré con...</option>
           <option>1 persona</option>
           <option>2 personas</option>
           <option>3+ personas</option>
         </select>
-        <button type="button" onclick="alert('¡Confirmado! Te esperamos con amor Heart'); closeModal('rsvpModal');" style="background:var(--azul-navy); color:white; padding:14px; border:none; border-radius:50px; cursor:pointer; margin-top:12px; font-size:1.1rem;">
+        <button type="submit" id="submitBtn" onclick="alert('¡Confirmado! Te esperamos con amor!'); closeModal('rsvpModal');" style="background:var(--azul-navy); color:white; padding:14px; border:none; border-radius:50px; cursor:pointer; margin-top:12px; font-size:1.1rem;">
           Enviar Confirmación
         </button>
       </form>
@@ -799,6 +800,7 @@ body {
     let audio = document.getElementById('wedding-music');
     let musicBtn = document.getElementById('music-control');
 
+    
     function startInvitation() {
       document.getElementById('intro').style.opacity = '0';
       setTimeout(() => {
@@ -895,6 +897,45 @@ window.onclick = function(event) {
         if (e.target.id === 'mapModal') document.getElementById('mapFrame').src = '';
       }
     }
+
+    // ──────────────────────────────────────────────
+// RSVP - Envío a Google Apps Script
+// ──────────────────────────────────────────────
+// ¡Reemplaza con TU URL real del Apps Script!
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwDYtLayl-Bl-qbm_PfapkOvcVlMnNreP1juEtwDqVrdrSHIVNY8KUWwzw-08svVGFoGg/exec";
+
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('rsvpForm');
+  if (!form) {
+    console.warn("Formulario RSVP no encontrado");
+    return;
+  }
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const formData = {
+      nombre:   document.getElementById('nombre')?.value.trim()   || '',
+      email:    document.getElementById('email')?.value.trim()    || '',
+      personas: document.getElementById('personas')?.value       || ''
+    };
+
+    fetch(SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString()
+    })
+    .then(() => {
+      closeModal('rsvpModal');
+      form.reset();
+    })
+    .catch(err => {
+      console.error('Error al enviar RSVP:', err);
+      alert('Hubo un problema al enviar. Intenta de nuevo o contáctanos por WhatsApp.');
+    });
+  });
+});
   </script>
 </body>
 </html>
