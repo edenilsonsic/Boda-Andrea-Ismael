@@ -69,7 +69,7 @@ body {
     body {
       font-family: 'Lora', serif;
       /*background: var(--celeste-pastel);*/
-      color: var(--celeste-suave);
+      color: var(--azul-navy);
       line-height: 1.7;
       overflow-x: hidden;
     }
@@ -260,7 +260,7 @@ body {
    }
   .image-fecha {
     width: 260px;
-    height: 200px;
+    height: 100px;
   }
 
 
@@ -318,7 +318,7 @@ body {
 /* RESPONSIVE */
 @media (min-width: 768px) {
   .hero-container {
-    height: 480px; /* Más alta en pantallas grandes */
+    height: 460px; /* Más alta en pantallas grandes */
   }
   .full-width-hero {
     border-radius: 28px;
@@ -415,8 +415,7 @@ body {
 
     /* === CUENTA REGRESIVA === */
     #countdown {
-      font-family: 'Cinzel', serif; font-size: 2rem; color: var(--azul-navy); text-align: center;
-      margin: 60px 0; letter-spacing: 3px; text-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      font-family: 'Lora', serif; font-size: 2rem; color: var(--azul-navy); text-align: center; letter-spacing: 3px; text-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
     /* === CARRUSEL === */
@@ -470,35 +469,56 @@ body {
     }
  /* === BOTÓN MAPS - SOMBRA DETRÁS, BOTÓN DELANTE === */
 .btn-maps-container {
-  display: inline-block;
-  position: relative;
-  margin: 20px auto;
-  text-align: center;
-  font-family: 'Lora', serif;
+  display: flex;              /* ← cambio importante */
+  justify-content: center;    /* centra horizontalmente */
+  align-items: center;        /* opcional: centra verticalmente si el contenedor tiene altura */
+  flex-wrap: wrap;            /* si hay varios botones, se bajan de línea bonito */
+  gap: 20px;                  /* separación entre botones si hay varios */
+  margin: 40px 0;             /* espacio arriba y abajo */
+  padding: 0 20px;            /* opcional: no pegado a los bordes en móviles */
 }
 
 .btn-maps {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 180px;
+  width: 130px;
   height: 50px;
   background: transparent;
-  color: #8B6F47;
+  color: var(--azul-navy);
   font-size: 1rem;
   font-weight: 500;
   border: 1.5px solid #000;
-  border-radius: 0;
+  border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
   position: relative;
   z-index: 10;                    /* Botón SIEMPRE delante */
-  transition: all 0.3s ease;
+  transition: all 0.6s ease;
+}
+
+.btn-asistencia {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 50px;
+  background: transparent;
+  color: var(--azul-navy);
+  font-size: 1rem;
+  font-weight: 500;
+  border: 1.5px solid #000;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  z-index: 10;                    /* Botón SIEMPRE delante */
+  transition: all 0.6s ease;
 }
 
 .btn-maps:hover {
   color: #6B5535;
-  transform: translateY(-5px);
+  transform: translateY(-10px);
 }
 
 /* SOMBRA BEIGE DETRÁS (misma forma y tamaño) */
@@ -506,16 +526,32 @@ body {
   content: '';
   position: absolute;
   top: 8px;                       /* Desplazamiento hacia abajo */
-  left: 0;
+  left: 5px;
   width: 100%;
   height: 100%;
-  background: #f5e8c7;            /* Beige claro */
+  background: transparent;            /* Beige claro */
   border: 1.5px solid #000;
-  border-radius: 0;
+  border-radius: 5px;
   z-index: 1;                     /* DETRÁS del botón */
   transition: all 0.3s ease;
   opacity: 0.9;
 }
+
+.btn-asistencia::before {
+  content: '';
+  position: absolute;
+  top: 8px;                       /* Desplazamiento hacia abajo */
+  left: 5px;
+  width: 100%;
+  height: 100%;
+  background: transparent;            /* Beige claro */
+  border: 1.5px solid #000;
+  border-radius: 5px;
+  z-index: 1;                     /* DETRÁS del botón */
+  transition: all 0.3s ease;
+  opacity: 0.9;
+}
+
 
 .btn-maps:hover::before {
   top: 12px;                      /* Se separa más al hacer hover */
@@ -528,8 +564,8 @@ body {
 
   <!-- PANTALLA DE INICIO -->
   <div id="intro">
-    <div class="intro-names"><br/>Andrea <br/> Ismael</div>
-    <div class="heart-float"><br/><br/>&</div>
+    <div class="intro-names">Andrea <br/> Ismael</div>
+    <div class="heart-float">&</div>
     <div class="intro-click" onclick="startInvitation()">Tenemos una noticia apra tí</div>
     <div class="intro-click" onclick="startInvitation()">¡Haz clic!</div>
   </div>
@@ -577,7 +613,7 @@ body {
       </div>
     </section>
 
-    <h1 style="font-family: 'Baskerville Old Face', cursive; font-size: 1.3rem; color: var(--azul-navy); text-align: center;">
+    <h1 style="font-family: 'Lora', cursive; font-size: 1.0rem; color: var(--azul-navy); text-align: center;">
       Tenemos el gran honor de invitarte a uno de los días más especiales de nuetras vidas. <br> La celebración de nuestro matrimonio <br> Un encuentro de amor, fé y alegría que permanecera por siempre en nuestro corazón</h1>
 
     <section class="section" style="text-align: center; padding: 6px 0;">
@@ -588,10 +624,10 @@ body {
 
     <!-- Cuenta Regresiva -->
     <section class="section" style="text-align: center;">
-        <div style="font-family: 'Baskerville Old Face', cursive; font-size: 2.8rem; color: var(--azul-navy); margin-bottom: 10px;">
+        <div style="font-family: 'Lora', cursive; font-size: 1.5rem; color: var(--azul-navy); margin-bottom: 1px;">
             FALTAN
         </div>
-        <div id="countdown" style="font-size: 1.9rem; letter-spacing: 2px;">Cargando...</div>
+        <div id="countdown" style="font-size: 1.7rem; letter-spacing: 2px;">Cargando...</div>
     </section>
 
     <!-- Cuadro Beige 1 -->
@@ -604,11 +640,14 @@ body {
     <!-- Ceremonia -->
     <section class="section">
       <h3 style="font-family: 'Great Vibes', cursive; font-size: 2.3rem; color: var(--azul-navy); text-align: center;">Ceremonia & Recepción</h3>
-      <p style="text-align: center;">CachitoMountain<br>Los Naranjos, Juyúa<br>18:00 hs</p>
+      <p style="text-align: center;">CachitoMountain<br>Los Naranjos, Juyúa<br>16:00 hs</p>
 <p style="text-align: center; margin-top: 15px;">
   <div class="btn-maps-container">
     <span class="btn-maps" onclick="openMap('CachitoMountain, Los Naranjos, Juyúa')">
-      Clic para ver en Maps
+      Ver en Maps
+    </span>
+    <span class="btn-maps" onclick="openMap('CachitoMountain, Los Naranjos, Juyúa')">
+      Ver en Waze
     </span>
   </div>
 </p>
@@ -625,52 +664,56 @@ body {
 
     <!-- Dresscode -->
     <section class="section">
-      <p style="text-align: center; font-style: italic; color: var(--azul-claro);">
+      <p style="text-align: center; font-style: italic; color: var(--azul-navy);">
         Dresscode Formal Elegante<br>
         <small>Colores sugeridos: tonos tierra y pasteles</small>
       </p>
+    </section>
+
+    <section class="section" style="text-align: center; padding: 4px 0;">
+      <div class="image-date-overlay">
+        <img src="img/dresscode.png" alt="Nos Casamos">
+      </div>
     </section>
 
     <!-- Corazón + Fecha (2) -->
     <section class="section">
       <div class="heart-date">
         <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-        <span>14 de Noviembre, 2026</span>
+        <span>11 de Abril, 2026</span>
       </div>
     </section>
 
-    <!-- Cuadro Beige 2 -->
+    <!-- Cuadro Beige 2 
     <section class="section">
       <div class="beige-box">
         <p>Tu presencia es el mejor regalo. <br>Si deseas contribuir con nuestra luna de miel:</p>
       </div>
-    </section>
+    </section>-->
 
     <!-- Confirmar Asistencia -->
     <section class="section">
-      <p style="text-align: center;">
-        <span class="text-link" onclick="openRSVP()">Confirma tu asistencia aquí</span>
-      </p>
+      <div class="btn-maps-container">
+        <span class="btn-asistencia" onclick="openRSVP()">Confirma tu asistencia aquí</span>
+      </div>
     </section>
+
+    
 
     <!-- Itinerario -->
     <section class="section">
       <h3 style="font-family: 'Great Vibes', cursive; font-size: 2.3rem; color: var(--azul-navy); text-align: center; margin-bottom: 35px;">Itinerario</h3>
       <div class="timeline">
         <div class="event">
-          <h4>16:30 hs</h4>
+          <h4>16:00 hs</h4>
           <p>Llegada de invitados</p>
         </div>
         <div class="event">
-          <h4>17:00 hs</h4>
-          <p>Ceremonia Civil</p>
-        </div>
-        <div class="event">
-          <h4>17:30 hs</h4>
+          <h4>16:30 hs</h4>
           <p>Ceremonia Religiosa</p>
         </div>
         <div class="event">
-          <h4>18:30 hs</h4>
+          <h4>17:30 hs</h4>
           <p>Recepción</p>
         </div>
       </div>
