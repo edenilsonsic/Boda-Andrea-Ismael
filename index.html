@@ -259,8 +259,8 @@ body {
 
    }
   .image-fecha {
-    width: 260px;
-    height: 100px;
+    width: 350px;
+    height: 150px;
   }
 
 
@@ -344,6 +344,9 @@ body {
 @media (max-width: 480px) {
   .hero-container {
     height: 300px; /* Más baja en móvil */
+  }
+  .hero-contenido {
+    height: 200px; /* Más baja en móvil */
   }
   .full-width-hero {
     border-radius: 16px;
@@ -575,7 +578,7 @@ body {
    <!-- Imagen Principal - ANCHO COMPLETO + REDONDEADA -->
 <section class="section full-width-hero">
   <div class="hero-container">
-    <img src="img/toma-principal.png" alt="Andrea & Ismael" class="hero-image">
+    <img src="img/toma1.png" alt="Andrea & Ismael" class="hero-image">
     
   </div>
 </section>
@@ -631,12 +634,12 @@ body {
     </section>
 
     <!-- Cuadro Beige 1 -->
-    <section class="section">
-      <div class="beige-box">
-        <p>Con gran alegría te invitamos a ser parte de nuestro día más especial. <br>¡Nos casamos!</p>
-      </div>
-    </section>
-
+    <section class="section full-width-hero">
+  <div class="hero-container">
+    <img src="img/toma-principal-2.png" alt="Andrea & Ismael" class="hero-image">
+    
+  </div>
+</section>
     <!-- Ceremonia -->
     <section class="section">
       <h3 style="font-family: 'Great Vibes', cursive; font-size: 2.3rem; color: var(--azul-navy); text-align: center;">Ceremonia & Recepción</h3>
@@ -680,7 +683,7 @@ body {
     <section class="section">
       <div class="heart-date">
         <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-        <span>11 de Abril, 2026</span>
+        <p style="text-align: center; font-style: italic; color: var(--azul-navy);">11 de Abril, 2026</p>
       </div>
     </section>
 
@@ -705,8 +708,12 @@ body {
       <h3 style="font-family: 'Great Vibes', cursive; font-size: 2.3rem; color: var(--azul-navy); text-align: center; margin-bottom: 35px;">Itinerario</h3>
       <div class="timeline">
         <div class="event">
-          <h4>16:00 hs</h4>
+          <h4>15:45 hs</h4>
           <p>Llegada de invitados</p>
+        </div>
+        <div class="event">
+          <h4>16:00 hs</h4>
+          <p>Ceremonia civil</p>
         </div>
         <div class="event">
           <h4>16:30 hs</h4>
@@ -714,10 +721,36 @@ body {
         </div>
         <div class="event">
           <h4>17:30 hs</h4>
+          <p>Retirada de los esposos</p>
+        </div>
+        <div class="event">
+          <h4>18:00 hs</h4>
           <p>Recepción</p>
         </div>
       </div>
     </section>
+
+<!-- Regalos 
+    <section class="section">
+      <h3 style="font-family: 'Great Vibes', cursive; font-size: 2.1rem; color: var(--azul-navy); text-align: center;">Regalos</h3>
+      <p style="text-align: center; margin: 18px 0;">
+        CBU: <span style="font-family: monospace; background: #eee; padding: 4px 8px; border-radius: 6px;">1234567890123456789012</span>
+      </p>
+    </section> -->
+
+    <section class="section">
+      <p style="text-align: center; font-style: italic; color: var(--azul-navy);">
+        Nuestro mejor regalo es tu presencia en nuestro día especial, pero si quieres hacernos un obsequio, será bienvendio en regalo de sobre.<br>
+        <small></small>
+      </p>
+    </section>
+    
+<section class="section padres-section">
+      <div class="padres-container">
+        <img src="img/regalo.png" alt="Nombres de los padres" class="padres-img">
+      </div>
+    </section>
+  </main>
 
     <!-- Carrusel de Fotos -->
     <section class="section">
@@ -731,26 +764,18 @@ body {
       </div>
     </section>
 
-    <!-- Regalos -->
-    <section class="section">
-      <h3 style="font-family: 'Great Vibes', cursive; font-size: 2.1rem; color: var(--azul-navy); text-align: center;">Regalos</h3>
-      <p style="text-align: center; margin: 18px 0;">
-        CBU: <span style="font-family: monospace; background: #eee; padding: 4px 8px; border-radius: 6px;">1234567890123456789012</span>
-      </p>
-    </section>
-
-    <!-- Foto Final -->
+    <!-- Foto Final 
     <section class="section">
       <img src="https://images.unsplash.com/photo-1515934751635-c81c6f98491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" style="max-width:100%; border-radius:16px; box-shadow: 0 15px 40px rgba(0,0,0,0.15);">
-    </section>
+    </section>-->
 
     
 
     <!-- Flores Finales -->
-    <section class="footer-flowers">
-      <svg width="340" height="110" viewBox="0 0 340 110" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M30 55c-7-14-21-14-28 0s7 28 14 28 21-14 14-28Zm60 0c-7-14-21-14-28 0s7 28 14 28 21-14 14-28Zm60 0c-7-14-21-14-28 0s7 28 14 28 21-14 14-28Zm60 0c-7-14-21-14-28 0s7 28 14 28 21-14 14-28Zm60 0c-7-14-21-14-28 0s7 28 14 28 21-14 14-28Zm60 0c-7-14-21-14-28 0s7 28 14 28 21-14 14-28Z" fill="#D4AF37" opacity="0.35"/>
-      </svg>
+    <section class="section padres-section">
+      <div class="padres-container">
+        <img src="img/pie de pagina.png" alt="Nombres de los padres" class="padres-img">
+      </div>
     </section>
   </main>
 
