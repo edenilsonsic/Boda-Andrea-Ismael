@@ -230,6 +230,18 @@ body {
   z-index: 2;
 }
 
+.overlay-drescode-text {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  /*color: rgb(15, 15, 15);*/
+  width: 80%;
+  pointer-events: none;
+  z-index: 2;
+}
+
 .overlay-text .title {
   font-family: 'Great Vibes', cursive;
   font-size: 0.5rem;
@@ -243,6 +255,13 @@ body {
   font-size: 1.10rem;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
   letter-spacing: 1px;
+}
+
+.overlay-drescode-text .date {
+  font-family: 'Lora', serif;
+  font-size: 1.10rem;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  /*letter-spacing: 1px;*/
 }
 
 /* Responsive para móviles */
@@ -268,6 +287,9 @@ body {
   }
   .overlay-text .date {
     font-size: 1rem;
+  }
+  .overlay-drescode-text .date{
+    font-size: 0.7rem;
   }
 
 
@@ -593,9 +615,9 @@ body {
 
   <!-- PANTALLA DE INICIO -->
   <div id="intro">
-    <div class="intro-names">Andrea <br/> Ismael</div>
+    <div class="intro-names">Ismael <br/> Andrea</div>
     <div class="heart-float">&</div>
-    <div class="intro-click" onclick="startInvitation()">Tenemos una noticia apra tí</div>
+    <div class="intro-click" onclick="startInvitation()">Tenemos una noticia para tí</div>
     <div class="intro-click" onclick="startInvitation()">¡Haz clic!</div>
   </div>
 
@@ -609,11 +631,11 @@ body {
   </div>
 </section>
 
-  <h1 style="font-family: 'Great Vibes', cursive; font-size: 4.0rem; color: var(--azul-medio); margin: 0; line-height: 0.75; ">Andrea </h1>
+  <h1 style="font-family: 'Great Vibes', cursive; font-size: 4.0rem; color: var(--azul-medio); margin: 0; line-height: 0.75; ">Ismael </h1>
 
   <h1 style="font-family: 'Great Vibes', cursive; font-size: 4.0rem; color: var(--azul-medio); text-align: center; margin: -0.6rem 0.3rem 0; line-height: 0.7; transform: translateY(-0.1em);"> & </h1>
 
-  <h1 style="font-family: 'Great Vibes', cursive; font-size: 4.0rem; color: var(--azul-medio); text-align:right; margin: -0.8rem 0 0; line-height: 0.75; "> Ismael</h1>
+  <h1 style="font-family: 'Great Vibes', cursive; font-size: 4.0rem; color: var(--azul-medio); text-align:right; margin: -0.6rem 0 0; line-height: 0.75; "> Andrea</h1>
 
 
 
@@ -643,7 +665,7 @@ body {
     </section>
 
     <h1 style="font-family: 'Lora', cursive; font-size: 1.0rem; color: var(--azul-navy); text-align: center;">
-      Tenemos el gran honor de invitarte a uno de los días más especiales de nuetras vidas. <br> La celebración de nuestro matrimonio <br> Un encuentro de amor, fé y alegría que permanecera por siempre en nuestro corazón</h1>
+      Tenemos el gran honor de invitarte a uno de los días más especiales de nuetras vidas. <br> ¡La celebración de nuestro matrimonio! <br> un encuentro de amor, fé y alegría que permanecerá por siempre en nuestro corazón</h1>
 
     <section class="section" style="text-align: center; padding: 6px 0;">
       <div class="image-fecha">
@@ -669,7 +691,7 @@ body {
     <!-- Ceremonia -->
     <section class="section">
       <h3 style="font-family: 'Great Vibes', cursive; font-size: 2.3rem; color: var(--azul-navy); text-align: center;">Ceremonia & Recepción</h3>
-      <p style="text-align: center;">CachitoMountain<br>Los Naranjos, Juyúa<br>16:00 hs</p>
+      <p style="text-align: center;">CachitoMountain<br>Los Naranjos, Juayúa<br>16:00 hs</p>
 <p style="text-align: center; margin-top: 15px;">
   <div class="btn-maps-container">
     <span class="btn-maps" onclick="openMap('CachitoMountain, Los Naranjos, Juyúa')">
@@ -695,13 +717,16 @@ body {
     <section class="section">
       <p style="text-align: center; font-style: italic; color: var(--azul-navy);">
         Dresscode Formal Elegante<br>
-        <small>Colores sugeridos: tonos tierra y pasteles</small>
+        <small>Por favor, ayudanos a mantener la magia del momento evitando colores <strong>Blanco, Rojo y beige</strong> en tu atuendo. <br> ¡Gracias por celebrar con nostros!</small>
       </p>
     </section>
 
-    <section class="section" style="text-align: center; padding: 4px 0;">
+    <section class="section" style="text-align: center; padding: 0px 0;">
       <div class="image-date-overlay">
         <img src="img/dresscode.png" alt="Nos Casamos">
+        <div class="overlay-drescode-text">
+          <div class="date">Por favor, ayudanos a mantener la magia del momento evitando colores <strong>Blanco, Rojo y beige</strong> en tu atuendo. <br> ¡Gracias por celebrar con nostros!</div>
+        </div>
       </div>
     </section>
 
@@ -766,7 +791,7 @@ body {
 
     <section class="section">
       <p style="text-align: center; font-style: italic; color: var(--azul-navy);">
-        Nuestro mejor regalo es tu presencia en nuestro día especial, pero si quieres hacernos un obsequio, será bienvendio en regalo de sobre.<br>
+        Nuestro mejor regalo es tu presencia en nuestro día especial, pero si quieres hacernos un obsequio, será bienvenido en regalo de sobre.<br>
         <small></small>
       </p>
     </section>
@@ -834,8 +859,13 @@ body {
         <input type="text" id="nombre"  placeholder="Nombre completo" required style="padding:12px; border:1px solid #ddd; border-radius:10px; font-family:inherit;">
         <input type="Telefono" id="email" placeholder="phone" required style="padding:12px; border:1px solid #ddd; border-radius:10px; font-family:inherit;">
         <select id="personas" required style="padding:12px; border:1px solid #ddd; border-radius:10px; font-family:inherit;">
-          
+          <option value="">Asistiremos...</option>
+          <option>1 persona</option>
+          <option>2 personas</option>
+          <option>3 personas</option>
+          <option>4 personas</option>
         </select>
+        <small> Recuerda respetar el límite máximo de asignaciones establecido al inicio, ¡gracias por respetarlo! </small>
         <button type="submit" id="submitBtn" onclick="alert('¡Confirmado! Te esperamos con amor!'); closeModal('rsvpModal');" style="background:var(--azul-navy); color:white; padding:14px; border:none; border-radius:50px; cursor:pointer; margin-top:12px; font-size:1.1rem;">
           Enviar Confirmación
         </button>
