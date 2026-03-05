@@ -692,7 +692,7 @@ body {
     <!-- Cuadro Beige 1 -->
     <section class="section full-width-hero">
   <div class="hero-container">
-    <img src="img/cuerpo-1.png" alt="Andrea & Ismael" class="hero-image">
+    <img src="img/toma-principal-3.png" alt="Andrea & Ismael" class="hero-image">
     
   </div>
 </section>
@@ -705,7 +705,7 @@ body {
     <span class="btn-maps" onclick="openMap('CachitoMountain, Los Naranjos, Juyúa')">
       Ver en Maps
     </span>
-    <span class="btn-maps" onclick="openMap('CachitoMountain, Los Naranjos, Juyúa')">
+    <span class="btn-maps" onclick="openWaze('CachitoMountain, Los Naranjos, Juyúa')">
       Ver en Waze
     </span>
   </div>
@@ -768,23 +768,33 @@ body {
       <div class="timeline">
         <div class="event">
           <h4>15:45 hs</h4>
-          <p>Llegada de invitados</p>
+          <p style=" font-style: italic; color: var(--azul-medio);">
+              <small>Llegada de invitados</small>
+            </p>
         </div>
         <div class="event">
           <h4>16:00 hs</h4>
-          <p>Ceremonia civil</p>
+            <p style=" font-style: italic; color: var(--azul-medio);">
+              <small>Ceremonia civil</small>
+            </p>
         </div>
         <div class="event">
           <h4>16:30 hs</h4>
-          <p>Ceremonia Religiosa</p>
+          <p style=" font-style: italic; color: var(--azul-medio);">
+              <small>Ceremonia Religiosa</small>
+            </p>
         </div>
         <div class="event">
           <h4>17:30 hs</h4>
-          <p>Retirada de los esposos</p>
+          <p style=" font-style: italic; color: var(--azul-medio);">
+              <small>Retirada de los esposos</small>
+            </p>
         </div>
         <div class="event">
           <h4>18:00 hs</h4>
-          <p>Recepción</p>
+          <p style=" font-style: italic; color: var(--azul-medio);">
+              <small>Recepción</small>
+            </p>
         </div>
       </div>
     </section>
@@ -799,8 +809,7 @@ body {
 
     <section class="section">
       <p style="text-align: center; font-style: italic; color: var(--azul-navy);">
-        Nuestro mejor regalo es tu presencia en nuestro día especial, pero si quieres hacernos un obsequio, será bienvenido en regalo de sobre.<br>
-        <small></small>
+        <small>Nuestro mejor regalo es tu presencia en nuestro día especial, pero si quieres hacernos un obsequio, será bienvenido en regalo de sobre.</small>
       </p>
     </section>
     
@@ -817,7 +826,16 @@ body {
         <img src="img/manos2.png">
         <img src="img/manos3.png">
         <img src="img/toma1.png">
-        <img src="img/carrusel11.jpg">
+        <img src="img/toma7.png">
+        <img src="img/toma2.png">
+        <img src="img/toma9.png">
+        <img src="img/toma10.png">
+        <img src="img/toma5.png">
+        <img src="img/toma6.png">
+        <img src="img/toma7.png">
+        <img src="img/toma8.png">
+        <img src="img/toma4.png">
+        <img src="img/toma4.png">
         <button class="carousel-btn prev" onclick="prevSlide()"> < </button>
         <button class="carousel-btn next" onclick="nextSlide()"> > </button>
       </div>
@@ -857,6 +875,16 @@ body {
     </div>
   </div>
 
+  <div id="WazeModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('WazeModal')">×</span>
+      <h3 style="text-align:center; margin-bottom:18px; color:var(--azul-navy); font-family: 'Great Vibes', cursive; font-size: 1.8rem;">Ubicación Waze</h3>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247895.74918222643!2d-89.92746137982944!3d13.87674624649903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f62c0505b64b3e1%3A0xbbf9203a6a00db5c!2sCachito%20Mountain%2C%20Los%20Naranjos!5e0!3m2!1ses!2ssv!4v1771532084920!5m2!1ses!2ssv" width="335" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+
   <!-- MODAL RSVP -->
   <div id="rsvpModal" class="modal">
     <div class="modal-content">
@@ -865,7 +893,7 @@ body {
 
       <form id="rsvpForm" style="display:flex; flex-direction:column; gap:14px;">
         <input type="text" id="nombre"  placeholder="Nombre completo" required style="padding:12px; border:1px solid #ddd; border-radius:10px; font-family:inherit;">
-        <input type="Telefono" id="email" placeholder="phone" required style="padding:12px; border:1px solid #ddd; border-radius:10px; font-family:inherit;">
+        <input type="Telefono" id="email" placeholder="Telefono" required style="padding:12px; border:1px solid #ddd; border-radius:10px; font-family:inherit;">
         <select id="personas" required style="padding:12px; border:1px solid #ddd; border-radius:10px; font-family:inherit;">
           <option value="">Asistiremos...</option>
           <option>1 persona</option>
@@ -873,7 +901,8 @@ body {
           <option>3 personas</option>
           <option>4 personas</option>
         </select>
-        <small> Recuerda respetar el límite máximo de asignaciones establecido al inicio, ¡gracias! </small>
+        <p style="text-align: center; font-style: italic; color: var(--azul-navy);">
+        <small> Recuerda respetar el límite máximo de asignaciones establecido al inicio, ¡gracias! </small></p>
         <button type="submit" id="submitBtn" onclick="alert('¡Confirmado! Te esperamos con amor!'); closeModal('rsvpModal');" style="background:var(--azul-navy); color:white; padding:14px; border:none; border-radius:50px; cursor:pointer; margin-top:12px; font-size:1.1rem;">
           Enviar Confirmación
         </button>
@@ -936,6 +965,29 @@ window.onclick = function(event) {
   }
 }
 
+    function openWaze() {
+  /*document.getElementById('WazeModal').style.display = 'flex';*/
+
+  window.open("https://waze.com/ul/hd42nzqm82", "_blank");
+}
+
+function closeWaze() {
+  document.getElementById('WazeModal').style.display = 'none';
+  
+}
+
+// Opcional: cerrar con clic fuera del contenido
+window.onclick = function(event) {
+  const modal = document.getElementById('WazeModal');
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+      if (id === 'WazeModal') document.getElementById('mapFrame').src = '';
+    }
+
     function openRSVP() {
       document.getElementById('rsvpModal').style.display = 'flex';
     }
@@ -986,7 +1038,6 @@ window.onclick = function(event) {
     // ──────────────────────────────────────────────
 // RSVP - Envío a Google Apps Script
 // ──────────────────────────────────────────────
-// ¡Reemplaza con TU URL real del Apps Script!
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwDYtLayl-Bl-qbm_PfapkOvcVlMnNreP1juEtwDqVrdrSHIVNY8KUWwzw-08svVGFoGg/exec";
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -1017,7 +1068,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .catch(err => {
       console.error('Error al enviar RSVP:', err);
-      alert('Hubo un problema al enviar. Intenta de nuevo o contáctanos por WhatsApp.');
+      alert('Hubo un problema al enviar. Intenta de nuevo o contáctanos por WhatsApp al 7663-0125.');
     });
   });
 });
